@@ -1,0 +1,431 @@
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #DFE4E0; /* Light Gray for main background */
+    color: #333;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px 0;
+  }
+
+.sidebar {
+    width: 80px;
+    background-color: #239f85; /* Green */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.icon {
+    font-size: 24px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.icon.active {
+    color: #ff5d22; /* Orange for active icon */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: hsl(167, 81%, 79%); /* Light Green */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DFE4E0;
+}
+
+.greeting-container {
+    display: flex;
+    align-items: center;
+    background-color: hsl(167, 71%, 77%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.greeting-text {
+    flex: 1;
+}
+
+.greeting-image {
+    width: 100%; /* or any percentage value */
+    max-width: 300px; /* Limit the max size */
+    height: auto; /* Keep aspect ratio */
+    margin-left: 20px; /* Maintain spacing */
+}
+
+.history-button {
+    background-color: #ff5d22;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.data-cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Color accents for each card */
+.card.heart-rate,
+.card.blood-pressure {
+    color: #ff5d22; /* Orange for heart rate and blood pressure */
+}
+.card.steps,
+.card.sleep-condition {
+    background-color: #239f85;
+    color: white;
+}
+
+.card.steps i,
+.card.sleep-condition i {
+    color: white;
+}
+.card.steps button,
+.card.sleep-condition button {
+    background-color: #ff5d22;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.card.steps button:hover,
+.card.sleep-condition button:hover {
+    background-color: #e04d1a;
+}
+
+/* Circular Progress for Overall Condition */
+.circular-progress {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #239f85 0% 65%, /* Green progress */
+        #DFE4E0 65% 100% /* Light Gray for remaining progress */
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.progress-value {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.profile-panel {
+    width: 250px;
+    background-color: #239f85;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.metrics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+/*.profile-panel {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    width: 350px; 
+    margin: auto;  
+    background:  #239f85; 
+    padding: 20px;  
+    border-radius: 10px;  
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+}  
+
+.profile-card {  
+    text-align: center;  
+}  
+
+.metrics {  
+    display: flex;  
+    justify-content: space-between;  
+    width: 100%;  
+    margin-top: 10px;  
+}  
+
+.metric-box {  
+    flex: 1;  
+    background-color: #f9f9f9;  
+    border: 1px solid #ddd;  
+    border-radius: 5px;  
+    padding: 10px;  
+    margin: 0 5px;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+}  
+
+.metric-box h4 {  
+    margin: 10px 0 5px;  
+}  
+
+.metric-box input {  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    padding: 5px;  
+    width: 80%;  
+}  */
+
+
+
+.signout-button {
+    margin-top: 15px;
+    background-color: #ff5d22; /* Orange */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signout-button:hover {
+    background-color: #e54c1b; /* Darker shade of orange */
+}
+
+/* Calendar Styling */
+.calendar {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.day, .date {
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.date {
+    background-color: hsl(167, 81%, 79%); /* Light Green background for dates */
+}
+
+/* Input Fields and Buttons */
+.card input[type="number"] {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.card button {
+    background-color: #239f85; /* Green */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.card button:hover {
+    background-color: #1d8b72; /* Darker green on hover */
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #DFE4E0;
+    color: #333;
+    margin: 0;
+}
+
+.sidebar {
+    width: 80px;
+    background-color: #239f85;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.icon {
+    font-size: 24px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.icon.active {
+    color: #ff5d22;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #DFE4E0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.user-greeting {
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Data Cards */
+.data-cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Circular Progress for Overall Condition */
+.circular-progress {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#239f85 0% 65%, #e0e0e0 65% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.progress-value {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Profile Panel */
+.profile-panel {
+    width: 250px;
+    background-color: #239f85;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.schedule h4 {
+    color: #239f85;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.schedule-box {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #dfe4e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-slot {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff5d22;
+    margin-bottom: 5px;
+}
+
+.meal {
+    color: #239f
+}
+.edit-schedule-button {  
+    margin-top: 10px;  
+    padding: 10px;  
+    background-color: #007bff;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    width: 100%;  
+}  
+
+.edit-schedule-button:hover {  
+    background-color: #0056b3;  
+}  

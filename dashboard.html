@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="menu">
+            <div class="icon active"><i class="fas fa-bars"></i></div>
+            <div class="icon"><i class="fas fa-user"></i></div>
+            <div class="icon"><i class="fas fa-chart-bar"></i></div>
+            <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="icon"><i class="fas fa-cog"></i></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Health Care Dashboard</h1>
+            <div class="header-right">
+                <button class="notification"><i class="fas fa-bell"></i></button>
+                <button class="today-button">Today ⬇️</button>
+            </div>
+        </header>
+        
+        <section class="user-greeting">
+            <div class="greeting-container">
+                <div class="greeting-text">
+                    <h2>Hello, <span class="highlight">Guy Hawkins</span></h2>
+                    <p>It looks like you have not completed today’s exercises</p>
+                    <button class="history-button">History ➔</button>
+                </div>
+                <img src="https://tse3.mm.bing.net/th?id=OIP.fNSWOzNOcC7h2_0SPu7svwHaDL&pid=Api&P=0&h=220" alt="Doctor Illustration" class="greeting-image">
+            </div>
+
+
+        <section class="data-cards">
+            <div class="card heart-rate">
+                <i class="fa-solid fa-heart-pulse" style="color: #ff0000;"></i>
+                <h3>Heart Rate</h3>
+                <p><span class="value" id="heartRateDisplay">102</span> bpm</p>
+                <p>Your heart rate is <strong id="heartRateStatus">normal</strong></p>
+                <!-- Input for heart rate -->
+                <input type="number" id="heartRateInput" placeholder="Enter heart rate" />
+                <button onclick="updateHeartRate()">Update</button>
+            </div>
+            <div class="card steps">
+                <i class="fa-solid fa-shoe-prints" style="color: #243756;"></i>
+                <h3>Steps</h3>
+                <p><span class="value" id="stepsDisplay">1500</span> Steps</p>
+                <p>Need <span id="stepsNeeded">3500</span> steps to complete 5000</p>
+                <!-- Input for steps -->
+                <input type="number" id="stepsInput" placeholder="Enter steps" />
+                <button onclick="updateSteps()">Update</button>
+            </div>
+            <div class="card blood-pressure">
+                <i class="fa-solid fa-droplet" style="color: #ff0000;"></i>
+                <h3>Blood Pressure</h3>
+                <p><span class="value" id="bloodPressureDisplay">98</span> mmHg</p>
+                <p>Your BP is <strong id="bloodPressureStatus">normal</strong></p>
+                <!-- Input for blood pressure -->
+                <input type="number" id="bloodPressureInput" placeholder="Enter BP" />
+                <button onclick="updateBloodPressure()">Update</button>
+            </div>
+            <div class="card sleep-condition">
+                <i class="fa-solid fa-shoe-prints" style="color: #243756;"></i>
+                    <h3>Sleep Condition</h3>
+                <p><span class="value" id="sleepDisplay">6</span> Hours</p>
+                <p>You have <strong id="sleepStatus">less</strong> sleep time</p>
+                <!-- Input for sleep -->
+                <input type="number" id="sleepInput" placeholder="Enter hours slept" />
+                <button onclick="updateSleep()">Update</button>
+            </div>
+            <div class="card overall-condition">
+                <div class="circular-progress">
+                    <span class="progress-value">65%</span>
+                </div>
+                <h3>Overall Condition</h3>
+                <p>2% greater than previous week</p>
+            </div>
+        </section>
+
+        <section class="chart">
+            <canvas id="healthChart" width="400" height="200"></canvas>
+        </section>
+    </div>
+
+    <div class="profile-panel">
+        <div class="profile-card">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+            <h3>Guy Hawkins</h3>
+            <p>20 years</p>
+            <div class="metrics">
+                <div><i class="fas fa-weight"></i> Weight: <strong>57 KG</strong></div>
+                <div><i class="fas fa-ruler-vertical"></i> Height: <strong>180 CM</strong></div>
+            </div>
+            <button class="signout-button"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+        </div>
+
+        <div class="calendar">
+            <h4>October 2024</h4>
+            <div class="calendar-grid">
+                <div class="day">Sun</div><div class="day">Mon</div><div class="day">Tue</div><div class="day">Wed</div><div class="day">Thu</div><div class="day">Fri</div><div class="day">Sat</div>
+                <div class="date">1</div> <div class="date">2</div> <div class="date">3</div>
+            </div>
+        </div>
+        
+        <div class="schedule">
+            <h4>Today's Schedule</h4>
+            <div class="schedule-box">
+                <div class="time-slot">
+                    <span class="time">8AM</span>
+                    <span class="meal">Breakfast</span>
+                </div>
+                <div class="time-slot">
+                    <span class="time">1PM</span>
+                    <span class="meal">Lunch</span>
+                </div>
+                <div class="time-slot">
+                    <span class="time">8PM</span>
+                    <span class="meal">Dinner</span>
+                </div>
+                <div class="time-slot">
+                    <span class="time">10PM</span>
+                    <span class="meal">Bed Time</span>
+                </div>
+            </div>
+            <button class="edit-schedule-button">+ Add/Edit Event</button>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
